@@ -1,0 +1,54 @@
+// Derek Song
+// APCS1 - pd1
+// HW #36 - Be Rational
+// 2017 - 11 - 18
+
+public class Rational {
+    
+    //Instance Vars
+    int numer;
+    int denom;
+
+    //Default Constructor
+    public Rational() {
+	numer = 0;
+	denom = 1;
+    }
+
+    //Constructor
+    public Rational (int num, int den) {
+	this();
+	if (den != 0) { //undefined if den = 0
+	    numer = num;
+	    denom = den;
+	}	
+    }
+
+    //toString
+    public String toString() {
+	return numer + "/" + denom;
+    }
+
+    //floatValue
+    public double floatValue(double x) {
+	double ans = numer / denom;
+	return ans;
+    }
+
+    //multiply
+    public multiply(Rational x) {
+	numer = numer * x.numer;
+	denom = denom * x.denom;
+    }
+
+    //divide
+    public divide(Rational x) {
+    }
+
+    public static void main(String [] args) {
+	Rational r = new Rational(2,3);
+	Rational s = new Rational(1,2);
+
+	System.out.println(r.multiply(s));
+    }
+}
