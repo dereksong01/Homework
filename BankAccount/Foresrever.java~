@@ -1,9 +1,0 @@
-public class Foresrever {
-    String fence;
-    public String fenceF (int posts) {
-	for (x = posts; x > 0; x -= 1;) {
-	    fence += "|--";
-	}
-	fence += "|";
-    }
-}

@@ -1,9 +1,0 @@
-public class Commafier {
-    public static String commafyR (int x) {
-	String result = String.parseStr(x);
-	//if 
-	//result += 
-    }
-    public static String commafyF (int x) {
-	//for (int place = 
-    }
