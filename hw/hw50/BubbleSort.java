@@ -46,7 +46,7 @@ public class BubbleSort {
 	for (int pos = 0; pos < data.size(); pos++) { //for every run, there should be one sorted number. Thus, we have to go until data.size - 1
 	    for (int start = 0; start < data.size() - 1; start++) {//goes through whole list
 		if ((data.get(start)).compareTo(data.get(start + 1)) > 0) {
-		    int temp = (int) data.get(start);
+		    Comparable temp = (int) data.get(start);
 		    data.set(start, data.get(start + 1));
 		    data.set((start + 1), temp);
 		}
