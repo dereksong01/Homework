@@ -1,0 +1,26 @@
+// Derek Song
+// APCS1 - pd1
+// HW#53 -
+// 2017 - 12 - 13
+
+public class MySorts {
+
+    // VOID version of InsertionSort
+    // Rearranges elements of input ArrayList
+    // postcondition: data's elements sorted in ascending order
+    public static void insertionSortV( ArrayList<Comparable> data ) {
+	for (int pass = 1; pass < data.size(); pass++) { //none are sorted until n-1 passes
+	    for (int x = 0; x < data.size(); x++) { //needs to do multiple times when the distance is greater than one. In order to guarantee, do it n-1 times.
+		for (int start = 0; start < pass; start++) { //traverse
+		    if ((data.get(start)).compareTo(data.get(start + 1)) > 0) {
+			Comparable holder = data.get(start);
+			data.set(start, data.get(start + 1));
+			data.set(start + 1, holder);
+		    }
+		}
+	    }
+	    System.out.println("Pass " + pass + ":" + data);
+	}
+    }//end insertionSortV
+
+}
