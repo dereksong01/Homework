@@ -5,10 +5,10 @@
  * must remain sorted in ascending order
  ********************************/
 
-// Derek Song
+// Team Kappa (Derek Song and Woosuk Lee)
 // APCS1 - pd1
-// HW#49 - Halving the Halves
-// 2017 - 12 - 7
+// HW#55 - Never Fear, Big Oh is Here!
+// 2017 - 12 - 14
 
 //ArrayList's implementation is in the java.util package
 import java.util.ArrayList;
