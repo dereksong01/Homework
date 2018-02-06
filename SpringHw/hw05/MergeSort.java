@@ -23,7 +23,12 @@ public class MergeSort
   private static int[] merge( int[] a, int[] b )
   {
       int[] ret = new int[a.length + b.length];
-      
+      int looplimit;
+      if (a.length > b.length)
+	  looplimit = a.length;
+      else {
+	  looplimit = b.length;
+      }
   }//end merge()
 
 
