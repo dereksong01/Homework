@@ -1,3 +1,8 @@
+// Derek Song
+// APCS2 pd8
+// HW#05 -
+// 2018 - 2 - 6
+
 /*======================================
   class MergeSort
   Implements mergesort on array of ints.
@@ -17,7 +22,8 @@ public class MergeSort
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-
+      int[] ret = new int[a.length + b.length];
+      
   }//end merge()
 
 
