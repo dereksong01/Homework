@@ -88,7 +88,7 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
+   * precondition: There is already a queen placed in the board
    * postcondition: 
    */
   private boolean removeQueen(int row, int col){
