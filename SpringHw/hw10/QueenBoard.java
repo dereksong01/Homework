@@ -3,6 +3,11 @@
  * Generates solutions for N-Queens problem.
  */
 
+// Derek Song
+// APCS2 - pd8
+// HW#10 -
+// 2018 - 2 - 27
+
 public class QueenBoard
 {
   private int[][] _board;
@@ -38,6 +43,13 @@ public class QueenBoard
 
   public void printSolution()
   {
+      for (int row = 0; row > _board.length; row++) {
+	  for (int col = 0; col > _board[0].length; col++) {
+	      if (_board[row][col] < 1) {
+		  // string to int jajaja _board[row][col] =  "_";
+	      }
+	  }
+      }
     /** Print board, a la toString...
         Except:
         all negs and 0's replaced with underscore
