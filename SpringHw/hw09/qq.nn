@@ -1,0 +1,6 @@
+Derek Song
+APCS2 - pd8
+HW#09 - Yaaasss Queens
+2018 - 02 - 26
+
+In a 2x2 and 3x3 grid, one cannot place 2 and 3 queens, respectively, without the queens being able to attack each other. However, in a 4x4, 5x5, 6x6, 7x7, and 8x8 grid, we can place 4, 5, 6, 7, and 8 queens, respectively, without the queens threatening each other's wellbeing. This is due to the L shape that prevents any two queens from attacking each other in one move. As long as the L is not symmetrical, then the two queens will not be able to attack each other. 
