@@ -67,7 +67,7 @@ class TourFinder
 	for( i=0; i < sideLength+4; i++ ) {
 	    for( j=0; j < sideLength+4; j++ )
 		retStr = retStr + String.format( "%3d", board[j][i] );
-	             //"%3d" allots 3 spaces for each number
+	    //"%3d" allots 3 spaces for each number
 	    retStr = retStr + "\n";
 	}
 	return retStr;
