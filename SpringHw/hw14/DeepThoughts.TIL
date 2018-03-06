@@ -11,3 +11,11 @@ Q2: Same, but for closed tour.
 
 
 
+Q3: How do you explain the increase in execution time as n increases?
+
+There is an increase in execution time as n increases because there are more possibilities that the program needs to consider thus, the task is more time consuming.
+
+Q4: Thoughts on optimization?
+
+Perhaps create some sort of consistent path or method of travel when the knight is travelling throughout the whole board or grid rather than moving in arbitrary directions.
+
