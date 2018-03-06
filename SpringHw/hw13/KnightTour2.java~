@@ -1,3 +1,8 @@
+// Derek Song
+// APCS2 - pd8
+// HW#13 - We on Award Tour
+// 2018 - 3 - 5
+
 /*======================================
   class KnightTour
   Animates a Knight's Tour of a square chess board.
@@ -29,7 +34,7 @@ import java.util.*;
 class TourFinder 
 {
     //instance vars
-    private int[][] _board;
+    private int[][] board;
     private int sideLength; //board has dimensions n x n
     private boolean solved = false;
 
@@ -39,18 +44,18 @@ class TourFinder
 	sideLength = n;
 
 	//init 2D array to represent square board with moat
-	_board = new int[n+4][n+4];
+	board = new int[n+4][n+4];
 
 	//SETUP BOARD --  0 on each cell to represent unvisited
 	//               -1 on each border/buffer cell around edges
 	//---------------------------------------------------------
 	for( int i=0; i < n+4; i++ )
 	    for( int j=0; j < n+4; j++ )
-		_board[i][j] = -1; //lay down initial blanket of -1's
+		board[i][j] = -1; //lay down initial blanket of -1's
 
 	for( int i=2; i < n+2; i++ )
 	    for( int j=2; j < n+2; j++ )
-		_board[i][j] = 0; //lay down 0's for actual _board
+		board[i][j] = 0; //lay down 0's for actual board
 	//---------------------------------------------------------
 
     }//end constructor
@@ -66,7 +71,7 @@ class TourFinder
 	int i, j;
 	for( i=0; i < sideLength+4; i++ ) {
 	    for( j=0; j < sideLength+4; j++ )
-		retStr = retStr + String.format( "%3d", _board[j][i] );
+		retStr = retStr + String.format( "%3d", board[j][i] );
 	    //"%3d" allots 3 spaces for each number
 	    retStr = retStr + "\n";
 	}
@@ -94,31 +99,28 @@ class TourFinder
      *********************************************/
     public void findTour( int x, int y, int moves ) 
     {
-	//delay(50); //slow it down enough to be followable
+	delay(50); //slow it down enough to be followable
 
 	//if a tour has been completed, stop animation
 	if ( solved ) System.exit(0);
 
 	//primary base case: tour completed
-	if ( moves > sideLength*sideLength ) {
+	if (moves >  (board.length * board.length)) {
 	    solved = true;
-	    System.out.println( this ); //refresh screen
-	    return;
+	    findTour(x, y, moves);
 	}
+	
 	//other base case: stepped off board or onto visited cell
-	if ( _board[x][y] != 0 ) {
-	    return;
+	if ( board[x][y] != 0 ) {
 	}
+	
 	//otherwise, mark current location
 	//and recursively generate tour possibilities from current pos
 	else {
 
-	    //mark current cell with current move number
-	    _board[x][y] = moves; 
+	    board[x][y] = moves;
 
-	    //System.out.println( this ); //refresh screen	    
-
-	    //delay(1000); //uncomment to slow down enough to view
+	    delay(1000); //uncomment to slow down enough to view
 
 	    /*======================================
 	      Recursively try to solve (find tour) from 
@@ -129,21 +131,21 @@ class TourFinder
 	      g . . . b
 	      . h . a .
 	      ======================================*/
-	    findTour( x+1, y+2, moves+1 ); // a
-	    findTour( x+2, y+1, moves+1 ); // b
-	    findTour( x+2, y-1, moves+1 ); // c
-	    findTour( x+1, y-2, moves+1 ); // d
-	    findTour( x-1, y-2, moves+1 ); // e
-	    findTour( x-2, y-1, moves+1 ); // f
-	    findTour( x-2, y+1, moves+1 ); // g
-	    findTour( x-1, y+2, moves+1 ); // h
 
+	    findTour(x + 2, y + 1, moves + 1);
+	    findTour(x + 2, y - 1, moves + 1);
+	    findTour(x - 2, y + 1, moves + 1);
+	    findTour(x - 2, y - 1, moves + 1);
+	    findTour(x + 1, y + 2, moves + 1);
+	    findTour(x + 1, y - 2, moves + 1);
+	    findTour(x - 1, y + 2, moves + 1);
+	    findTour(x - 1, y - 2, moves + 1);
+	    
 	    //If made it this far, path did not lead to tour, so back up.
 
-	    // (Overwrite number at this cell with a 0.)
-	    _board[x][y] = 0;
-	    
-	    //System.out.println( this ); //refresh screen
+	    board[x][y] = 0;
+
+	    System.out.println( this ); //refresh screen
 	}
     }//end findTour()
 
@@ -172,15 +174,12 @@ public class KnightTour
 	System.out.println( tf );
 
 	//for random starting location, use lines below:
-	//int startX = 2 + (int)( n * Math.random() );
-	//int startY = 2 + (int)( n * Math.random() );
-	//tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+	int startX = 2 + (int)( n * Math.random() );
+	int startY = 2 + (int)( n * Math.random() );
+	tf.findTour( startX, startY, 1 );   // 1 or 0 ?
 
 	//for fixed starting location, use line below:
-	long start = System.currentTimeMillis();
 	tf.findTour( 2, 2, 1 );
-	long time = (System.currentTimeMillis() - start);
-        System.out.println(time);
 
     }//end main()
 

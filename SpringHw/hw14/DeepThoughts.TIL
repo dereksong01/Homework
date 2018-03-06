@@ -1,0 +1,13 @@
+Derek Song
+APCS2 - pd8
+HW#14 - Probing the Depths...
+2018 - 3 - 6
+
+Q1: From any starting position, can an open tour always be found? Explain.
+
+For an even board, if the board is partitioned into four congruent squares and if there is a possible solution with a starting point within that square, then there are potentially four solutions. For an odd board, it is the same case however, it would only be potentially two solutions.
+
+Q2: Same, but for closed tour.
+
+
+
