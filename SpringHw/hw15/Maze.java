@@ -127,7 +127,7 @@ class MazeSolver
 	else if ( maze[x][y] == ' ') { // hits wall
 	    return;
 	}
-	else if ( maze[x][y] == '-' ) { // revisits path
+	else if ( maze[x][y] == '.' ) { // revisits path
 	    return;
 	}
 	else if ( x >= maze.length || x < maze.length
@@ -140,7 +140,7 @@ class MazeSolver
 
 	    System.out.println(this);
 
-	    maze[x][y] = '-'; // marks the territory that hath been travelled before
+	    maze[x][y] = '.'; // marks the territory that hath been travelled before
 
 	    // up, down, left, right
 	    solve(x, y + 1);
