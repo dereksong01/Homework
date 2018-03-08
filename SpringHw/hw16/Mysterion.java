@@ -105,6 +105,8 @@ public class Mysterion {
 	System.out.println(Mysterion(arr14, 0, 4, 4));
 	printArr(arr14);
 	
-        
+        int[] arr15 = {1, 4, 3, 2, 5};
+	System.out.println(Mysterion(arr15, 0, 4, 4));
+	printArr(arr15);
     }
 }
