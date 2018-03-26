@@ -13,34 +13,21 @@ public class ItrWorkAL
     //returns a boolean to indicate whether key is present in L
     public static boolean foundA( Integer key, List<Integer> L ) 
     { 
-	for (int x : L) {
-	    if (x == key) {
-		return true;
-	    }
-	}
-	return false;
+	/*** YOUR IMPLEMENTATION HERE ***/
     }
 
     //explicitly using an iterator
     //returns a boolean to indicate whether key is present in L
     public static boolean foundB( Integer key, List<Integer> L ) 
     { 
-        Iterator i = L.interator();
-	while (i.hasNext()) {
-	    if (i.next() == key)
-		return true;
-	}
-	return false;
+	/*** YOUR IMPLEMENTATION HERE ***/
     }
 
     //using FOREACH loop
     //returns a list containing the odd numbers in L
     public static List<Integer> oddsA( List<Integer> L ) 
     { 
-	List ret = new List<Integer>;
-	for (int x : L)
-	    if ((x % 2) == 1)
-		ret.add(x);
+	/*** YOUR IMPLEMENTATION HERE ***/
     }
 
     //explicitly using an iterator
