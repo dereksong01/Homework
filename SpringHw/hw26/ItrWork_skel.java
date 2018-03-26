@@ -41,6 +41,7 @@ public class ItrWorkAL
 	for (int x : L)
 	    if ((x % 2) == 1)
 		ret.add(x);
+	return ret;
     }
 
     //explicitly using an iterator
