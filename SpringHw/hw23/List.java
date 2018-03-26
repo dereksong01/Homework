@@ -25,11 +25,5 @@ public interface List
 
     //return length of list
     public int size();
-    /*
-    //insert a node containing newVal at position index
-    public void add( int index, String newVal );
-
-    //remove node at pos index, return its cargo
-    public String remove( int index );
-    */
+    
 }//end interface

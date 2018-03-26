@@ -1,14 +1,10 @@
-// Derek Song
-// APCS2 - pd8
-// HW#23 - Give and Take
-// 2018 - 3 - 22
-
 /*****************************************************
  * class LList
  * Implements a linked list of LLNodes, each containing String data
  *****************************************************/
 
-public class LList implements List { 
+public class LList implements List //your List interface must be in same dir
+{ 
 
     //instance vars
     private LLNode _head;

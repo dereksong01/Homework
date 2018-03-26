@@ -51,8 +51,6 @@ public class ListTester
 	    wu.remove(n);
 	    System.out.println("Updated list: " + wu);
     }
-
-    
   }
 
 }//end class
