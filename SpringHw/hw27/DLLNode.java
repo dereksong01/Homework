@@ -11,7 +11,7 @@ public class DLLNode<T> {
 
     // constructor -- initializes instance vars
     public DLLNode( T value, DLLNode<T> prev, DLLNode<T> next ) 
-{
+    {
 	_cargo = value;
 	_nextNode = next;
 	_prevNode = prev;
@@ -54,11 +54,11 @@ public class DLLNode<T> {
 
     //main method for testing
     public static void main( String[] args ) 
-{
+    {
 	//Below is an exercise in creating a linked list...
 
 	/*********************
-	//Create a node
+	 //Create a node
 	DLLNode<String> first = new DLLNode<String>( "cat", null );
 
 	//Create a new node after the first

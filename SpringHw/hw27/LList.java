@@ -1,3 +1,7 @@
+// Derek Song
+// APCS2 - pd8
+// HW#27 - Make Itr Work
+// 2018 - 3 - 27
 /*****************************************************
  * class LList v4
  * Implements a linked list of DLLNodes
@@ -140,6 +144,10 @@ public class LList<T> implements List<T>
     //return number of nodes in list
     public int size() { return _size; } 
 
+    public Iterator<T> iterator() {
+	return new MyIterator();
+    }
+    
     //--------------^  List interface methods  ^--------------
 
 
@@ -206,6 +214,90 @@ public class LList<T> implements List<T>
     //--------------^  Helper methods  ^--------------
 
 
+    
+    /*****************************************************
+     * inner class MyIterator
+     * Adheres to specifications given by Iterator interface.
+     * Uses dummy node to facilitate iterability over LList.
+     *****************************************************/
+    public class MyIterator implements Iterator<T> 
+    {
+	private DLLNode<T> _dummy;   // dummy node to tracking pos
+	private boolean _okToRemove; // flag indicates next() was called
+    
+	//constructor 
+	public MyIterator() 
+	{
+	    _dummy = new DLLNode (null,null,_head);
+	    _okToRemove = false;
+	}
+
+	//-----------------------------------------------------------
+	//--------------v  Iterator interface methods  v-------------
+	//return true if iteration has more elements.
+	public boolean hasNext() 
+	{
+	    if (_dummy.getNext() == null) {
+		return false;
+	    }
+	    return true;
+	}
+
+
+	//return next element in this iteration
+	public T next() 
+	{
+	    if (hasNext()) {
+		_okToRemove = true;
+		_dummy = _dummy.getNext();
+		return _dummy.getCargo();
+	    }
+	    throw new NoSuchElementException();
+	}
+
+
+	//return last element returned by this iterator (from last next() call)
+	//postcondition: maintains invariant that _dummy always points to a node
+	//               (...so that hasNext() will not crash)
+	public void remove() 
+	{
+	    //Q: What is significance/purpose of these lines? 
+	    if ( ! _okToRemove )
+		throw new IllegalStateException("must call next() beforehand");
+	    _okToRemove = false;
+	    //A: There could be only one removal per move. Hence, _okToRemove is set to false after the condition.
+
+	    //if we're trying to remove from index 0
+	    if (_dummy.getPrev() == null ) {
+		_dummy.getNext().setPrev(null);
+	        _dummy = _dummy.getNext();
+	    }
+	    
+	    //if we're trying to remove the last element
+	    else if (size() == 1) {
+		_dummy.getPrev().setNext(null);
+	    }
+    
+	    //Q: How many ELSE-IF's are necessary?
+	    //A: 1
+	    //Q: What are the cases you must consider?
+	    //A: The beginning, middle, and end
+  
+	    //if we're trying to remove an element in the middle
+	    else {
+		_dummy.getPrev().setNext(_dummy.getNext());
+		_dummy.getNext().setPrev(_dummy.getPrev());
+	    }
+
+	    //Q: Anything else need to be done?
+	    //A: Housekeeping (size)
+	    _size--;
+      
+	}//end remove()
+    }//*************** end inner class MyIterator ***************
+
+
+    
     // override inherited toString
     public String toString()
     { 
