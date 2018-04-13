@@ -16,7 +16,7 @@
  * b/c ...
  ******************************************************/
 
-public class Scheme implements Stack
+public class Scheme
 {
     ArrayList store = new ArrayList();
     
