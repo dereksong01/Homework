@@ -4,7 +4,7 @@
  * Allows for generic typing.
  *****************************************************/
 
-public interface Stack<PANCAKE> 
+public interface Stack <PANCAKE> 
 {
     //Return true if this stack is empty, otherwise false.
     public boolean isEmpty();

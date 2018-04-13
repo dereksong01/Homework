@@ -16,8 +16,10 @@
  * b/c ...
  ******************************************************/
 
-public class Scheme
+public class Scheme implements Stack
 {
+    ArrayList store = new ArrayList();
+    
     /****************************************************** 
      * precond:  Assumes expr is a valid Scheme (prefix) expression,
      *           with whitespace separating all operators, parens, and 
@@ -29,20 +31,28 @@ public class Scheme
      ******************************************************/
     public static String evaluate( String expr ) 
     {
-	String[] arr = expr.split("\\s+"); // "\\s+" to be safe
-	String ans = ""; // holds the answer
-	String op = ""; // holds the operation
-	
-	for (int i = 1; i < arr.length; i++) { // we can start from 1 because it is a valid scheme expression
-	    if (arr[i].equals("+"))
-		op += "+";
-	    if (arr[i].equals("-"))
-		op += "-";
-	    if (arr[i].equals("*"))
-		op += "*";
-	    if (!(arr[i].equals("+")) || (arr[i].equals("-")) ||
-		(arr[i].equals("*")))
-		
+	String[] splitted = expr.split("\\s+"); //split!
+	Stack<String> _stack = new ALStack<String>(); //make a stack
+	String current; //will represent the String we are currently examining
+	for (int i = splitted.length - 1; i > -1; i--) { //for loop going through splitted
+	    current = splitted[i]; //the string we are examining
+	    if (current.equals("(")) { //if it is the start of an operation
+		String op = _stack.pop(); //get the operation
+		if (op.equals("+")) { 
+		    _stack.push(unload(1,_stack)); //"replace" the expression with a sngle string
+		}
+		else if (op.equals("-")) {
+		    _stack.push(unload(2,_stack));
+		}
+		if (op.equals("*")) {
+		    _stack.push(unload(3,_stack));
+		}
+	    }
+	    else { //all other necessary elements go into stack. This is so unload has access to the numbers and when to end with ")"
+		_stack.push(current);
+	    }
+	}
+	return _stack.pop(); //get the last computation unload made
 	}
     }//end evaluate()
 
@@ -55,6 +65,22 @@ public class Scheme
      ******************************************************/
     public static String unload( int op, Stack<String> numbers ) 
     {
+	int first = Integer.parseInt(numbers.pop()); //we must get a "base" 
+	int current; //will represent the current string
+	while (!(numbers.peek().equals(")"))) { //go until we have reached the end of the operation
+	    current = Integer.parseInt(numbers.pop()); //get current value. It's important to pop so we get rid of the expression
+	    if (op == 1) { 
+		first += current; //
+	    }
+	    if (op == 2) {
+		first -= current;
+	    }
+	    if (op == 3) {
+		first *= current;
+	    }
+	}
+	numbers.pop(); //eliminate ")" so the expression is gone
+	return "" + first; //return as datatype string
     }//end unload()
 
 
@@ -76,7 +102,6 @@ public class Scheme
     public static void main( String[] args )
     {
 
-	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 	  String zoo1 = "( + 4 3 )";
 	  System.out.println(zoo1);
 	  System.out.println("zoo1 eval'd: " + evaluate(zoo1) );
@@ -96,6 +121,8 @@ public class Scheme
 	  System.out.println(zoo4);
 	  System.out.println("zoo4 eval'd: " + evaluate(zoo4) );
 	  //...-4
+	  	/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+
 	  ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
     }//main
 
