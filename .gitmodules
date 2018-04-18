@@ -1,0 +1,3 @@
+[submodule "Labs/Labs/kabbage"]
+	path = Labs/Labs/kabbage
+	url = git@github.com:dereksong01/kabbage.git
