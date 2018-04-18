@@ -6,7 +6,7 @@
 public class NodeQueueDriver{
     
     public static void main(String args[]){
-        NodeQueue<String> test = new NodeQueue<String>();
+        ALQueue<String> test = new ALQueue<String>();
         
         System.out.println(test.isEmpty()); //TRUE
         test.enqueue("apple");
