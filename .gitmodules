@@ -4,3 +4,18 @@
 [submodule "Labs/Labs/Something-New"]
 	path = Labs/Labs/Something-New
 	url = git@github.com:sroudnitsky/Something-New.git
+[submodule "Labs/kabbage"]
+	path = Labs/kabbage
+	url = https://github.com/dereksong01/kabbage_Liu-J_Song-D_Wong-L.git
+[submodule "Labs/FastBlueTurtle"]
+	path = Labs/FastBlueTurtle
+	url = https://github.com/dereksong01/FastBlueTurtle_Liu-J_Song-D_Wang-A_Ye-A.git
+[submodule "Labs/BaysideBananas"]
+	path = Labs/BaysideBananas
+	url = https://github.com/dereksong01/BaysideBananas.git
+[submodule "Labs/Something"]
+	path = Labs/Something
+	url = https://github.com/dereksong01/Something.git
+[submodule "SpringHw/Labs/Something-New"]
+	path = SpringHw/Labs/Something-New
+	url = https://github.com/sroudnitsky/Something-New.git
