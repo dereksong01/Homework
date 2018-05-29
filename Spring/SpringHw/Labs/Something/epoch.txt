@@ -1,8 +1,0 @@
-long start = System.currentTimeMillis();
-long elapsed;
-	
-//insert code here
-
-elapsed = System.currentTimeMillis() - start;
-System.out.println(elapsed);
-

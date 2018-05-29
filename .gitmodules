@@ -4,3 +4,6 @@
 [submodule "Spring/BaysideBalloons"]
 	path = Spring/BaysideBalloons
 	url = https://github.com/jkim33/BaysideBalloons.git
+[submodule "Final_Projects/Spring_FP/BaysideBalloons"]
+	path = Final_Projects/Spring_FP/BaysideBalloons
+	url = https://github.com/jkim33/BaysideBalloons.git

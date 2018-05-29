@@ -1,0 +1,23 @@
+Derek Song
+APCS2 - pd8
+HW#14 - Probing the Depths...
+2018 - 3 - 6
+
+Q1: From any starting position, can an open tour always be found? Explain.
+
+For an even board, if the board is partitioned into four congruent squares and a solution was found in one of those squares, then an open tour could be found. However, for an odd sided board, finding an open tour is very improbable.
+
+Q2: Same, but for closed tour.
+
+For an even board, if the board is partitioned into four congruent squares and if there is a possible solution with a starting point within that square, then there are potentially four solutions. For an odd board, it is the same case however, it would only be potentially two solutions.
+
+Q3: How do you explain the increase in execution time as n increases?
+
+There is an increase in execution time as n increases because there are more possibilities that the program needs to consider thus, the task is more time consuming.
+
+Q4: Thoughts on optimization?
+
+Perhaps create some sort of consistent path or method of travel when the knight is travelling throughout the whole board or grid rather than moving in arbitrary directions.
+
+Status:
+Ask the "hero" if they are standing on a path, wall, or exit. If they are on a path, then move either left, right, up, or down. If they are on a wall, then move back to previous position. If they are on the exit, then exit the program.
