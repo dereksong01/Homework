@@ -1,0 +1,6 @@
+[submodule "BaysideBalloons"]
+	path = BaysideBalloons
+	url = https://github.com/jkim33/BaysideBalloons.git
+[submodule "Spring/BaysideBalloons"]
+	path = Spring/BaysideBalloons
+	url = https://github.com/jkim33/BaysideBalloons.git
