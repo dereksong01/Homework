@@ -7,3 +7,6 @@
 [submodule "Final_Projects/Spring_FP/BaysideBalloons"]
 	path = Final_Projects/Spring_FP/BaysideBalloons
 	url = https://github.com/jkim33/BaysideBalloons.git
+[submodule "Labs/Spring_Labs/BaysideBanans"]
+	path = Labs/Spring_Labs/BaysideBanans
+	url = https://github.com/dereksong01/BaysideBananas.git
